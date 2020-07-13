@@ -4,7 +4,7 @@ const rose = {
     image: 'rose.jpg',
     description: 'A beautiful, romantic flower that makes a great gift',
     category: 'romantic',
-    price: 6.00
+    price: 9.00
 };
 
 const lily = {
@@ -13,14 +13,43 @@ const lily = {
     image: 'lily.jpg',
     description: 'An elegant flower suited for weddings, anniversaries or funerals',
     category: 'events',
-    price: 4.00
+    price: 12.00
 };
 
+const hydrangea = {
+    id: 'hydrangea',
+    name: 'Hydrangea',
+    image: 'hydrangea.jpg',
+    description: 'A fun spring flower!',
+    category: 'any-event',
+    price: 3.00
+};
+
+const snapdragon = {
+    id: 'snapdragon',
+    name: 'Snapdragon',
+    image: 'snapdragon.jpg',
+    description: "Looks like a dragon's mouth!",
+    category: 'fun',
+    price: 40.00
+};
+
+const daffodil = {
+    id: 'daffodil',
+    name: 'Daffodil',
+    image: 'daffodil.jpg',
+    description: 'A fragrant spring flower',
+    category: 'spring',
+    price: 5.00
+};
 
 
 const flowers = [
     rose,
-    lily
+    lily,
+    hydrangea,
+    snapdragon,
+    daffodil
 ];
 
 
