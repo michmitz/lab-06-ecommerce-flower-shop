@@ -2,6 +2,8 @@ import { renderFlower } from '../products/render-flower.js';
 
 const test = QUnit.test;
 
+QUnit.module('Render Flower');
+
 test('renders a flower', assert => {
     const rose = {
         id: 'rose',

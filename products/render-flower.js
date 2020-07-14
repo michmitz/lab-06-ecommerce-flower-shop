@@ -1,4 +1,4 @@
-function renderFlower(flower) {
+export function renderFlower(flower) {
     const liEl = document.createElement('li');
 
     const category = flower.category;
