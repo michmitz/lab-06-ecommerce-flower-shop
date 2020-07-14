@@ -1,3 +1,23 @@
-ol, ul {
-    list-style: none;
+main {
+    background-image: url('../assets/backyard.jpg');
+    background-size: cover;
 }
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#flowers img {
+    width: 50%;
+    height: 50%;
+    align-items: center;
+}
+
+#flowers p {
+    padding-top: 5px;
+    margin: 0px;
+}
+

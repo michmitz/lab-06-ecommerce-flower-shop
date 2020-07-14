@@ -6,6 +6,6 @@ const list = document.getElementById('flowers');
 for (let i = 0; i < flowers.length; i++) {
     const flower = flowers[i];
     const el = renderFlower(flower);
-    list.appendChild(el);
+    list.append(el);
 }
 
