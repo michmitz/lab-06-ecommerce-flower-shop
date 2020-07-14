@@ -1,0 +1,10 @@
+main {
+    background-image: url('../assets/backyard.jpg');
+    background-size: cover;
+}
+
+table {
+    margin-top: 50px;
+    border: solid 2px gold;
+    padding: 5px;
+}
