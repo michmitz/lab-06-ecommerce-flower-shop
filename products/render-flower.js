@@ -1,3 +1,5 @@
+import { getCart, findById } from '../common/utils.js';
+
 export function renderFlower(flower) {
     const liEl = document.createElement('li');
 
@@ -20,8 +22,35 @@ export function renderFlower(flower) {
     pEl.textContent = `$${flower.price.toFixed(2)}`;
 
     const buttonEl = document.createElement('button');
-    buttonEl.value = 'rose';
+    buttonEl.value = flower.id;
     buttonEl.textContent = 'Add';
+    buttonEl.addEventListener('click', () => {
+        console.log('ID', flower.id);
+        const cart = getCart();
+
+        const flowerInCart = findById(cart, flower.id);
+
+        if (flowerInCart) {
+            flowerInCart.quantity++;
+        } else {
+            const newFlower = {
+                id: flower.id,
+                quantity: 1 
+            };
+
+            cart.push(newFlower);
+        } 
+        
+        console.log(cart);
+
+        const stringyFlowerCart = JSON.stringify(cart);
+
+        localStorage.setItem('CART', stringyFlowerCart);
+
+
+    });
+
+
     pEl.append(buttonEl);
 
     liEl.append(pEl);

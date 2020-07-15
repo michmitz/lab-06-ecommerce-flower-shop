@@ -1,7 +1,8 @@
 import flowers from '../data/flowers.js';
-import cart from '../data/cart.js';
-import { findById, calcOrderTotal } from '../common/utils.js';
+import { findById, calcOrderTotal, getCart } from '../common/utils.js';
 import { renderLineItem } from './render-line-item.js';
+
+const cart = getCart();
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
