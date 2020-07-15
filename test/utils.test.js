@@ -1,42 +1,54 @@
 // IMPORT MODULES under test here:
-import { findById, calcLineItem } from '../common/utils.js';
+import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
+import flowers from '../data/flowers.js';
+import cart from '../data/cart.js';
 
 const test = QUnit.test;
 
 // set up some hard coded data
-const spot = {
-    id: 'spot',
-    type: 'doggy',
-    weight: 5
-};
 
-const douglas = {
-    id: 'douglas',
-    type: 'doggy',
-    weight: 12
-};
-
-const jumpy = {
-    id: 'jumpy',
-    type: 'froggy',
-    weight: 1
-};
-
-const myArray = [
-    spot,
-    douglas,
-    jumpy
-];
 
 test('it should take in an id and an array and return the matching item', function(assert) {
+    const rose = {
+        id: 'rose',
+        name: 'Red Rose',
+        image: 'rose.jpg',
+        description: 'A beautiful, romantic flower that makes a great gift',
+        category: 'romantic',
+        price: 9.00
+    };
+    
+    const lily = {
+        id: 'lily',
+        name: 'White Lily',
+        image: 'lily.jpg',
+        description: 'An elegant flower suited for weddings, anniversaries or funerals',
+        category: 'events',
+        price: 12.00
+    };
+    
+    const hydrangea = {
+        id: 'hydrangea',
+        name: 'Hydrangea',
+        image: 'hydrangea.jpg',
+        description: 'A fun spring flower!',
+        category: 'any-event',
+        price: 3.00
+    };
+
+    const myArray = [
+        rose,
+        lily,
+        hydrangea
+    ];
 
     //Arrange
     // Set up your parameters and expectations
 
-    const myId1 = 'spot';
-    const myId2 = 'jumpy';
-    const expected1 = spot;
-    const expected2 = jumpy;
+    const myId1 = 'hydrangea';
+    const myId2 = 'lily';
+    const expected1 = hydrangea;
+    const expected2 = lily;
 
     //Act 
     // Call the function you're testing and set the result to a const
@@ -63,3 +75,12 @@ test('calculate line total', (assert) => {
     assert.equal(total, expected);
 });
 
+test('calculate order total', (assert) => {
+    const expected = 427;
+
+    const orderTotal = calcOrderTotal(cart, flowers);
+
+    assert.equal(orderTotal, expected);
+    
+});
+    

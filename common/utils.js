@@ -16,5 +16,16 @@ export function roundAmount(amount) {
     return total;
 }
 
+export function calcOrderTotal(cart, flowers) {
+    let orderTotal = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const flowerItem = cart[i];
+        const flower = findById(flowers, flowerItem.id);
+        const lineTotal = calcLineItem(flowerItem.quantity, flower.price);
+        orderTotal += lineTotal;
+    }
+    return roundAmount(orderTotal);
+}
+
 
 
