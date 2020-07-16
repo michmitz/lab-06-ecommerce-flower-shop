@@ -40,8 +40,6 @@ export function renderFlower(flower) {
 
             cart.push(newFlower);
         } 
-        
-        console.log(cart);
 
         const stringyFlowerCart = JSON.stringify(cart);
 

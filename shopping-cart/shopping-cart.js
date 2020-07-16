@@ -6,6 +6,7 @@ const cart = getCart();
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
+const placeOrderButton = document.getElementById('order-button');
 
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
@@ -17,3 +18,17 @@ for (let i = 0; i < cart.length; i++) {
 
 const orderTotal = calcOrderTotal(cart, flowers);
 orderTotalCell.textContent = `$${orderTotal.toFixed(2)}`;
+
+if (cart.length === 0) {
+    placeOrderButton.disabled = true;
+}
+else {
+
+    placeOrderButton.addEventListener('click', () => {
+        localStorage.removeItem('CART');
+     
+        alert('Order placed:\n' + JSON.stringify(cart, true, 2));
+        
+        window.location = '../index.html';
+    });
+}
