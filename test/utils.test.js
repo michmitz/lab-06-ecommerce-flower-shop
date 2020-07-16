@@ -1,5 +1,5 @@
 // IMPORT MODULES under test here:
-import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
+import { findById, calcLineItem, calcOrderTotal, getCart } from '../common/utils.js';
 import flowers from '../data/flowers.js';
 import cart from '../data/cart.js';
 
@@ -83,4 +83,28 @@ test('calculate order total', (assert) => {
     assert.equal(orderTotal, expected);
     
 });
-    
+
+test('should return the current state of the cart', assert => {
+    const myFakeCart = [
+        { id: 'lily',
+            quantity: 5 },
+        { id: 'hydrangea',
+            quantity: 2 },
+    ];
+
+    const myStringyFakeCart = JSON.stringify(myFakeCart);
+    localStorage.setItem('CART', myStringyFakeCart);
+    const cart = getCart();
+    const expected = myFakeCart;
+
+    assert.deepEqual(cart, expected);
+});
+
+test('should return an empty array if cart is null in local storage', assert => {
+    localStorage.removeItem('CART');
+    const cart = getCart();
+    const expected = [];
+
+    assert.deepEqual(cart, expected);
+
+});

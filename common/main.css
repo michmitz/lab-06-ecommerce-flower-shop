@@ -22,6 +22,8 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-image: url('../assets/backyard.jpg');
+    background-size: cover;
 }
 
 section {
