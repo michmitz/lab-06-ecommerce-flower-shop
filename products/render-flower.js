@@ -1,4 +1,5 @@
-import { getCart, findById } from '../common/utils.js';
+import { findById } from '../common/utils.js';
+import { getCart } from '../common/cart-api.js';
 
 export function renderFlower(flower) {
     const liEl = document.createElement('li');
