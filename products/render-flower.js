@@ -39,15 +39,17 @@ export function renderFlower(flower) {
     buttonEl.textContent = 'Add';
     buttonEl.addEventListener('click', () => {
         const cart = getCart();
-
+        const quantityInput = Number(inputEl.value);
         const flowerInCart = findById(cart, flower.id);
+        
 
         if (flowerInCart) {
-            flowerInCart.quantity++;
+            flowerInCart.quantity = flowerInCart.quantity + quantityInput;
+            
         } else {
             const newFlower = {
                 id: flower.id,
-                quantity: 1 
+                quantity: quantityInput
             };
 
             cart.push(newFlower);
