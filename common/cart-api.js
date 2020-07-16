@@ -4,3 +4,7 @@ export function getCart() {
 
     return cart;
 }
+
+export function clearCart() {
+    localStorage.removeItem('CART');
+}

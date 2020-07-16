@@ -1,6 +1,6 @@
 import flowers from '../data/flowers.js';
 import { findById, calcOrderTotal } from '../common/utils.js';
-import { getCart } from '../common/cart-api.js';
+import { getCart, clearCart } from '../common/cart-api.js';
 import { renderLineItem } from './render-line-item.js';
 
 const cart = getCart();
@@ -26,9 +26,9 @@ if (cart.length === 0) {
 else {
 
     placeOrderButton.addEventListener('click', () => {
-        localStorage.removeItem('CART');
      
         alert('Order placed:\n' + JSON.stringify(cart, true, 2));
+        clearCart();
         
         window.location = '../index.html';
     });
