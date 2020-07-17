@@ -1,4 +1,5 @@
-import { getCart, findById } from '../common/utils.js';
+import { findById } from '../common/utils.js';
+import { getCart } from '../common/cart-api.js';
 
 export function renderFlower(flower) {
     const liEl = document.createElement('li');
@@ -21,21 +22,35 @@ export function renderFlower(flower) {
     pEl.classList.add('price');
     pEl.textContent = `$${flower.price.toFixed(2)}`;
 
+    const labelEl = document.createElement('label');
+    labelEl.for = 'quantity';
+    labelEl.textContent = 'Quantity';
+
+    const inputEl = document.createElement('input');
+    inputEl.type = 'number';
+    inputEl.id = 'quantity';
+    inputEl.name = 'quantity';
+    inputEl.min = 1;
+    inputEl.max = 5;
+    inputEl.append(labelEl); 
+
+
     const buttonEl = document.createElement('button');
     buttonEl.value = flower.id;
     buttonEl.textContent = 'Add';
     buttonEl.addEventListener('click', () => {
-        console.log('ID', flower.id);
         const cart = getCart();
-
+        const quantityInput = Number(inputEl.value);
         const flowerInCart = findById(cart, flower.id);
+        
 
         if (flowerInCart) {
-            flowerInCart.quantity++;
+            flowerInCart.quantity = flowerInCart.quantity + quantityInput;
+            
         } else {
             const newFlower = {
                 id: flower.id,
-                quantity: 1 
+                quantity: quantityInput
             };
 
             cart.push(newFlower);
@@ -48,7 +63,8 @@ export function renderFlower(flower) {
 
     });
 
-
+    pEl.append(labelEl);
+    pEl.append(inputEl);
     pEl.append(buttonEl);
 
     liEl.append(pEl);
@@ -58,48 +74,3 @@ export function renderFlower(flower) {
 }
 
 export default renderFlower;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*// write a function that takes in an array and an id and returns the matching item
-export function renderFruit(fruit) {
-    const liEl = document.createElement('li');
-    
-    const category = fruit.category;
-    liEl.classList.add(category);
-    const title = fruit.description;
-    liEl.title = title;
-
-    const h3El = document.createElement('h3');
-    h3El.textContent = fruit.name;
-    liEl.append(h3El);
-
-    const imgEl = document.createElement('img');
-    imgEl.src = fruit.image;
-    imgEl.alt = fruit.name + ' image'
-    liEl.append(imgEl);
-
-    const pEl = document.createElement('p');
-    pEl.classList.add('price');
-    pEl.textContent = `$${fruit.price.toFixed(2)}`;
-
-    const buttonEl = document.createElement('button');
-    buttonEl.value = 'apple';
-    buttonEl.textContent = 'Add';
-    pEl.append(buttonEl);
-    
-    liEl.append(pEl);
-    
-    return liEl;
-}*/

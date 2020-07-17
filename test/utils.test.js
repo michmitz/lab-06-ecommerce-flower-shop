@@ -1,5 +1,6 @@
 // IMPORT MODULES under test here:
-import { findById, calcLineItem, calcOrderTotal, getCart } from '../common/utils.js';
+import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
+import { getCart } from '../common/cart-api.js';
 import flowers from '../data/flowers.js';
 import cart from '../data/cart.js';
 

@@ -10,14 +10,46 @@ ul {
     text-align: center;
 }
 
+#flowers li {
+    margin: 5px;
+    padding: 10px;
+}
+
+
 #flowers img {
-    width: 50%;
-    height: 50%;
+    width: 200px;
+    height: 200px;
     align-items: center;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+h2 {
+    font-size: 50px;
+}
+
+#flowers li h3 {
+    font-size: 25px;;
+    margin: 5px;
+    font-family: 'Amatic SC', cursive;
+    
 }
 
 #flowers p {
     padding-top: 5px;
     margin: 0px;
 }
+
+button {
+    margin: 3px;
+    padding: 3px;
+}
+
+label {
+    margin: 5px;
+    font-size: 20px;
+}
+
+
+
 
