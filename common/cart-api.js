@@ -8,3 +8,10 @@ export function getCart() {
 export function clearCart() {
     localStorage.removeItem('CART');
 }
+
+/*export function addToCart() {
+    const cart = getCart();
+    const stringyFlowerCart = JSON.stringify(cart);
+
+    localStorage.setItem('CART', stringyFlowerCart);
+}*/

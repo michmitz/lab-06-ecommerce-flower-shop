@@ -33,3 +33,4 @@ else {
         window.location = '../index.html';
     });
 }
+
