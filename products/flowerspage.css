@@ -10,10 +10,29 @@ ul {
     text-align: center;
 }
 
+#flowers li {
+    margin: 5px;
+    padding: 10px;
+}
+
+
 #flowers img {
-    width: 50%;
-    height: 50%;
+    width: 200px;
+    height: 200px;
     align-items: center;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+h2 {
+    font-size: 50px;
+}
+
+#flowers li h3 {
+    font-size: 25px;;
+    margin: 5px;
+    font-family: 'Amatic SC', cursive;
+    
 }
 
 #flowers p {
@@ -26,8 +45,9 @@ button {
     padding: 3px;
 }
 
-#quantity {
+label {
     margin: 5px;
+    font-size: 20px;
 }
 
 

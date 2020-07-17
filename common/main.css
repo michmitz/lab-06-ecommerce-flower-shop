@@ -59,6 +59,7 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    font-family: 'Amatic SC', cursive;
 }
 
 .gutter-right {
@@ -76,4 +77,9 @@ p {
 
 ol, ul {
     list-style: none;
+}
+
+a {
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
 }
